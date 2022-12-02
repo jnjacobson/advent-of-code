@@ -8,8 +8,7 @@ const sortedElves = input
     elf.split('\n')
       .reduce((acc, val) => acc + +val , 0)
   ))
-  .sort()
-  .reverse();
+  .sort((n1,n2) => n2 - n1);
 
 const solutionPart1 = sortedElves[0];
 
