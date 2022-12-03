@@ -15,10 +15,12 @@ const getItemPriority = (item: string): number => {
 }
 
 const solutionPart1 = lines
+  // split into the 2 compartments
   .map((line: string): [string, string] => [
     line.slice(0, line.length / 2),
     line.slice(line.length / 2)
   ])
+  // get priority of common item
   .map(([compartment1, compartment2]): number => {
     const item = compartment1
       .split('')
@@ -34,15 +36,17 @@ const solutionPart1 = lines
 
 
 const solutionPart2 = lines
-  .reduce((triples, val): string[][] => {
-    if (triples[triples.length - 1].length === 3) {
-      triples.push([]); // last triple is full, make new one
+  // get groups of three
+  .reduce((groups, val): string[][] => {
+    if (groups[groups.length - 1].length === 3) {
+      groups.push([]); // last group is full, make new one
     }
 
-    triples[triples.length - 1].push(val);
+    groups[groups.length - 1].push(val);
 
-    return triples;
+    return groups;
   }, [[]] as string[][])
+  // get priority of common item
   .map(([inv1, inv2, inv3]) => {
     const item = inv1
       .split('')
@@ -54,6 +58,7 @@ const solutionPart2 = lines
 
     return getItemPriority(item);
   })
+  // sum
   .reduce((acc, val) => acc + val, 0);
 
 console.log({
