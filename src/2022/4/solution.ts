@@ -6,15 +6,13 @@ const lines = input
   .split('\n')
   .filter((line: string) => line.length > 0);
 
-const getStartAndEnd = (section: string): [number, number] => {
-  const [start, end] = section.split('-').map((str) => +str);
-
-  return [start, end];
-}
+const getStartEndTuple = (section: string): [number, number] => (
+  section.split('-').map((str) => +str) as [number, number]
+)
 
 const doContain = (sections1: string, sections2: string): boolean => {
-  const [start1, end1] = getStartAndEnd(sections1);
-  const [start2, end2] = getStartAndEnd(sections2);
+  const [start1, end1] = getStartEndTuple(sections1);
+  const [start2, end2] = getStartEndTuple(sections2);
 
   return (start1 <= start2 && end1 >= end2)
     || (start2 <= start1 && end2 >= end1);
@@ -33,8 +31,8 @@ const doOverlap = (sections1: string, sections2: string): boolean => {
     return true;
   }
 
-  const [start1, end1] = getStartAndEnd(sections1);
-  const [start2, end2] = getStartAndEnd(sections2);
+  const [start1, end1] = getStartEndTuple(sections1);
+  const [start2, end2] = getStartEndTuple(sections2);
 
   return (start2 >= start1 && start2 <= end1)
     || (start1 >= start2 && start1 <= end2);
