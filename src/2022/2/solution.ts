@@ -78,7 +78,7 @@ class Shape {
 
 const input = readFileSync('src/2022/2/input.txt', 'utf-8');
 
-const lines = input.split('\n')
+const lines = input.split('\n');
 
 const solutionPart1 = lines
   .map((line) => {

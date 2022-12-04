@@ -27,10 +27,6 @@ const solutionPart1 = lines
   .reduce((acc, val) => acc + +val, 0);
 
 const doOverlap = (sections1: string, sections2: string): boolean => {
-  if (doContain(sections1, sections2)) {
-    return true;
-  }
-
   const [start1, end1] = getStartEndTuple(sections1);
   const [start2, end2] = getStartEndTuple(sections2);
 
