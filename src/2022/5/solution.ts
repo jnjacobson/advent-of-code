@@ -5,7 +5,7 @@ const lines = readFileSync('src/2022/5/input.txt', 'utf-8')
 
 const stacks: string[][] = lines
   // remove lines that contain no crates
-  .filter((line) => line.length > 0 && line[0] === '[' || line.substring(0, 2) === '  ')
+  .filter((line) => line.length > 0 && (line[0] === '[' || line.substring(0, 2) === '  '))
   // reverse to start at the bottom of the stacks
   .reverse()
   // get crates from each line and push them into its stack array
