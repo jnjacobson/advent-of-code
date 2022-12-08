@@ -20,6 +20,6 @@ const findMarkerPos = (str: string, markerLen: number): number => {
 }
 
 console.log({
-  solutionPart1: findMarkerPos(inputStr, 4),
-  solutionPart2: findMarkerPos(inputStr, 14),
+  answerPart1: findMarkerPos(inputStr, 4),
+  answerPart2: findMarkerPos(inputStr, 14),
 })

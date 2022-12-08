@@ -80,7 +80,7 @@ const input = readFileSync('src/2022/2/input.txt', 'utf-8');
 
 const lines = input.split('\n');
 
-const solutionPart1 = lines
+const answerPart1 = lines
   .map((line) => {
     if (line.length < 3) {
       return 0;
@@ -93,7 +93,7 @@ const solutionPart1 = lines
   })
   .reduce((acc, val) => acc + val, 0);
 
-const solutionPart2 = lines
+const answerPart2 = lines
   .map((line) => {
     if (line.length < 3) {
       return 0;
@@ -107,6 +107,6 @@ const solutionPart2 = lines
   .reduce((acc, val) => acc + val, 0);
 
 console.log({
-  solutionPart1,
-  solutionPart2,
+  answerPart1,
+  answerPart2,
 });

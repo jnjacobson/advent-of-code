@@ -10,13 +10,13 @@ const sortedElves = input
   ))
   .sort((n1,n2) => n2 - n1);
 
-const solutionPart1 = sortedElves[0];
+const answerPart1 = sortedElves[0];
 
-const solutionPart2 = sortedElves
+const answerPart2 = sortedElves
   .slice(0, 3)
   .reduce((acc, val) => acc + val, 0);
 
 console.log({
-  solutionPart1,
-  solutionPart2,
+  answerPart1,
+  answerPart2,
 });

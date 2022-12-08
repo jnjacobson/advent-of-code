@@ -14,7 +14,7 @@ const getItemPriority = (item: string): number => {
   return item.charCodeAt(0) - asciiToPriority;
 }
 
-const solutionPart1 = rucksacks
+const answerPart1 = rucksacks
   // split rucksack into the 2 compartments
   .map((rucksack: string): [string, string] => [
     rucksack.slice(0, rucksack.length / 2),
@@ -36,7 +36,7 @@ const solutionPart1 = rucksacks
   .reduce((acc, val) => acc + val, 0);
 
 
-const solutionPart2 = rucksacks
+const answerPart2 = rucksacks
   // get groups of three
   .reduce((groups: string[][], rucksack: string): string[][] => {
     if (groups[groups.length - 1].length === 3) {
@@ -65,6 +65,6 @@ const solutionPart2 = rucksacks
   .reduce((acc, val) => acc + val, 0);
 
 console.log({
-  solutionPart1,
-  solutionPart2,
+  answerPart1,
+  answerPart2,
 })

@@ -72,7 +72,7 @@ moves.forEach((move) => {
     stacksCopy1[move.to].push(crate);
   }
 });
-const solutionPart1 = getTopCrates(stacksCopy1);
+const answerPart1 = getTopCrates(stacksCopy1);
 
 const stacksCopy2 = JSON.parse(JSON.stringify(stacks));
 moves.forEach((move) => {
@@ -81,9 +81,9 @@ moves.forEach((move) => {
 
   stacksCopy2[move.to].push(...crates);
 });
-const solutionPart2 = getTopCrates(stacksCopy2);
+const answerPart2 = getTopCrates(stacksCopy2);
 
 console.log({
-  solutionPart1,
-  solutionPart2,
+  answerPart1,
+  answerPart2,
 });

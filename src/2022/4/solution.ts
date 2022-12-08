@@ -18,7 +18,7 @@ const doContain = (sections1: string, sections2: string): boolean => {
     || (start2 <= start1 && end2 >= end1);
 }
 
-const solutionPart1 = lines
+const answerPart1 = lines
   .map((line: string): boolean => {
     const [ sections1, sections2 ] = line.split(',');
 
@@ -34,7 +34,7 @@ const doOverlap = (sections1: string, sections2: string): boolean => {
     || (start1 >= start2 && start1 <= end2);
 }
 
-const solutionPart2 = lines
+const answerPart2 = lines
   .map((line: string): boolean => {
     const [ sections1, sections2 ] = line.split(',');
 
@@ -43,6 +43,6 @@ const solutionPart2 = lines
   .reduce((acc, val) => acc + +val, 0);
 
 console.log({
-  solutionPart1,
-  solutionPart2,
+  answerPart1,
+  answerPart2,
 });
