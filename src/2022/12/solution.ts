@@ -1,4 +1,3 @@
-import { getDiffieHellman } from 'crypto';
 import { readFileSync } from 'fs';
 
 function addAdjacents(adjacents: number[][], squares: string[][], row: number, col: number) {
