@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "tsnode current",
+      "name": "ts-node ${relativeFile}",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "npx",
@@ -10,14 +10,9 @@
         "ts-node"
       ],
       "args": [
-        "${file}"
+        "${relativeFile}"
       ],
-      "cwd": "${workspaceRoot}",
-      "internalConsoleOptions": "openOnSessionStart",
-      "skipFiles": [
-        "<node_internals>/**",
-        "node_modules/**"
-      ]
+      "internalConsoleOptions": "openOnSessionStart"
     }
   ]
 }
